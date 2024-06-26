@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+NG+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+NG+Modern:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+DE+Grund:wght@100..400&family=Playwrite+NG+Modern:wght@100..400&display=swap');
+/* General styles */
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #0f0e0e;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 28px;
+  height: 28px;
+  background: 
+    linear-gradient(to right, #84a7e4, #3737d3, #000082) border-box;
+  border: 3px solid transparent;
+  border-radius: 2px;
+  background-clip: padding-box, border-box;
+  box-sizing: border-box;
+}
+
+.app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Headings */
+.mainHeading {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
+.mainHeading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -200px;  /* Extend 200px to the left */
+  right: 0;
+  height: 3px;
+  width: calc(100% + 1272px);  /* Increase width to compensate */
+  background: linear-gradient(to right, #84a7e4 , #3737d3, #000082);
+}
+
+.mainHeading h1 {
+  text-align: right;
+  color: #6092ff;
+  padding-bottom: 10px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  
+}
+
+.subHeading h2 {
+  text-align: center;
+  font-size: 35px;
+  color: #6092ff;
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 150px;
+  margin-bottom: 20px;
+  line-height: 1.4;
+
+}
+
+.quote {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #4a75be;
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: bolder;
+  font-style: normal;
+}
+
+
+/* Input form */
+.input {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 7px;
+ 
+}
+
+.input input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #6092ff;
+  border-radius: 4px 4px 4px 4px;
+  background-color: #faf5f5;
+}
+
+.input input:focus {
+  outline: none; 
+  border-width: 2px;
+  border-color: #6a6af5; 
+  box-shadow: 0 0 5px rgba(55, 55, 211, 0.5); 
+}
+
+.input button {
+  padding: 10px 15px;
+  background-color: #3f49fa;
+  color: white;
+  border: none;
+  border-radius: 4px 4px 4px 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input button:hover {
+  background-color: #0026e3;
+}
+
+/* Todo list */
+.todos {
+  background-color: #faf5f5;
+  border-radius: 4px;
+  height: min-content;
+  padding: 20px;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.todo-content {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.todo-timestamp {
+  font-size: 0.8em;
+  color: #888;
+  display: flex;
+  gap: 10px;
+}
+
+.todo-item.finished {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.todo-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Todo text */
+.todo-item p {
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Icon styles */
+.icons {
+  display: flex;
+  gap: 0.5em;
+}
+
+.icons svg {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icons svg:hover {
+  color: #04007c;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .app {
+    padding: 10px;
+  }
+
+  .input input {
+    font-size: 14px;
+  }
+
+  .todo-item {
+    padding: 10px;
+  }
+}
